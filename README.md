@@ -1,4 +1,4 @@
-## PumpDeFi — About the Project
+## Pump DeFi — About the Project
 
 Pump DeFi is a comprehensive DeFi suite built for the Core blockchain (Core Testnet, chain id 1114). It combines a token Pump launchpad, AMM/DEX, liquidity management (V2 + V3 UX), airdrops, staking, lending, escrow, affiliate tracking, and analytics into a single cohesive platform.
 
