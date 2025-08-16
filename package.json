@@ -1,0 +1,57 @@
+{
+  "name": "zentra-core",
+  "version": "1.0.0",
+  "description": "DeFi ecosystem for Core testnet blockchain",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "subgraph"
+  ],
+  "scripts": {
+    "install:all": "npm install && npm run install:contracts && npm run install:frontend && npm run install:backend && npm run install:subgraph",
+    "install:contracts": "cd contracts && forge install",
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && npm install",
+    "install:subgraph": "cd subgraph && npm install",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "npm run build:contracts && npm run build:frontend && npm run build:backend",
+    "build:contracts": "cd contracts && forge build",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "test": "npm run test:contracts && npm run test:frontend && npm run test:backend",
+    "test:contracts": "cd contracts && forge test",
+    "test:frontend": "cd frontend && npm run test",
+    "test:backend": "cd backend && npm run test",
+    "deploy:contracts": "cd contracts && forge script script/Deploy.s.sol --rpc-url $CORE_RPC_URL --broadcast --verify",
+    "deploy:subgraph": "cd subgraph && npm run deploy",
+    "clean": "npm run clean:contracts && npm run clean:frontend && npm run clean:backend",
+    "clean:contracts": "cd contracts && forge clean",
+    "clean:frontend": "cd frontend && rm -rf dist node_modules",
+    "clean:backend": "cd backend && rm -rf dist node_modules",
+    "index:codebase": "node ../scripts/index-codebase.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zentra-core/zentra-core"
+  },
+  "keywords": [
+    "defi",
+    "dex",
+    "launchpad",
+    "core-blockchain",
+    "ethereum",
+    "solidity",
+    "react"
+  ],
+  "author": "Zentra Core Team",
+  "license": "MIT"
+}
